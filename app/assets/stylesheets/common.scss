@@ -1,0 +1,46 @@
+body{
+  margin: 0;
+}
+
+header{
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 30px;
+  background-color: yellow;
+}
+
+footer{
+  width: 100%;
+  padding: 20px;
+  margin-top: 30px;
+  background-color: yellow;
+}
+
+.notice{
+  background-color: "cyan";
+  color: #fff;
+}
+
+h1{
+  margin: 0 auto;
+}
+
+table th{
+  background-color: orange;
+  padding: 5px 10px;
+}
+
+table td{
+  background-color: yellow;
+  padding: 5px 10px;
+  text-align: center;
+}
+
+.notice{
+  background-color: cyan;
+  padding: 5px;
+}
+
+a{
+  text-decoration: none;
+}
