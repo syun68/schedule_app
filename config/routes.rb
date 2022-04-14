@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'schedules/index'
-  get 'schedule/index'
   get 'sort_by_date', to: 'schedules#sort_by_date'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

@@ -8,17 +8,21 @@
 
   <tr>
     <th>開始日</th>
-    <td><%= @schedule.start %></td>
+    <td><%= @schedule.start.to_s(:datetime_jp) %></td>
   </tr>
 
   <tr>
     <th>投稿日時</th>
-    <td><%= @schedule.created_at %></td>
+    <td><%= @schedule.created_at.to_s(:datetime_jp) %></td>
   </tr>
 
   <tr>
     <th>終日</th>
-    <td><%= @schedule.allday %></td>
+    <td>
+      <% if @schedule.allday %>
+        ○
+      <% end %>
+    </td>
   </tr>
 
   <tr>

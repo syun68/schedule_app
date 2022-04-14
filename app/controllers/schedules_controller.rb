@@ -12,7 +12,7 @@ class SchedulesController < ApplicationController
   end
 
   def create
-    @schedule = Schedule.new(params.require(:schedule).permit(:title,:start,:end,:allday,:content))
+    @schedule = Schedule.new(schedule_params)
     if @schedule.save
       flash[:notice] = "スケジュールを登録しました"
       redirect_to :schedules
@@ -29,22 +29,9 @@ class SchedulesController < ApplicationController
     @schedule = Schedule.find(params[:id])
   end
 
-  # def update
-  #   @schedule = Schedule.find(params[:id])
-  #   @schedule.update(params.require(:schedule).permit(:title,:start,:end,:allday,:content))
-  #   if @schedule.end.before? start
-  #     flash[:notice] = "終了日が開始日よりも早いです"
-  #   elsif @schedule.save
-  #     flash[:notice] = "スケジュールを更新しました"
-  #     redirect_to :schedules
-  #   else
-  #     render "edit", status: :unprocessable_entity
-  #   end
-  # end
-
   def update
     @schedule = Schedule.find(params[:id])
-    @schedule.update(params.require(:schedule).permit(:title,:start,:end,:allday,:content))
+    @schedule.update(schedule_params)
     if @schedule.save
       flash[:notice] = "スケジュールを更新しました"
       redirect_to :schedules
@@ -59,4 +46,11 @@ class SchedulesController < ApplicationController
       flash[:notice] = "削除しました"
       redirect_to :schedules
   end
+
+  private
+
+  def schedule_params
+    params.require(:schedule).permit(:title,:start,:end,:allday,:content)
+  end
+
 end
